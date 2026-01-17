@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<style>
+body{font-family:Arial;background:#f4f4f4;text-align:center}
+.card{background:white;max-width:400px;margin:80px auto;padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+input,button{padding:10px;margin:8px;border-radius:6px;border:1px solid #aaa}
+button{background:#6f4e37;color:white;border:none}
+#panel{display:none}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Admin Login</h2>
+<input type="password" id="pass" placeholder="Password">
+<br>
+<button onclick="login()">Login</button>
+
+<div id="panel">
+<h3>Admin Panel</h3>
+<p>આ demo admin panel છે.</p>
+<button onclick="alert('Saved (Demo)')">Save</button>
+</div>
+</div>
+
+<script>
+function login(){
+ if(document.getElementById("pass").value==="1234"){
+   document.getElementById("panel").style.display="block";
+   alert("Login Successful");
+ }else{
+   alert("Wrong Password");
+ }
+}
+</script>
+
+</body>
+</html>
