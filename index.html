@@ -2,39 +2,184 @@
 <html lang="gu">
 <head>
 <meta charset="UTF-8">
-<title>અલખનો ઑટલો</title>
+<title>અલખનો ઑટલો - Cafe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f4f6f8;
-  color:#333;
+  background:#f7efe5;
+  color:#3b2f2f;
 }
 header{
-  background:#2e7d32;
-  color:#fff;
-  padding:20px;
+  background:#6f4e37;
+  color:white;
+  padding:25px;
   text-align:center;
-  font-size:26px;
+  font-size:28px;
   font-weight:bold;
 }
 nav{
-  background:#1b5e20;
-  padding:10px;
+  text-align:center;
+  padding:15px;
+  background:#d2b48c;
+}
+nav button{
+  background:#6f4e37;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  margin:5px;
+  border-radius:20px;
+  font-size:15px;
+  cursor:pointer;
+}
+nav button:hover{background:#5a3f2b;}
+
+.section{padding:30px 15px;}
+.card{
+  background:white;
+  max-width:600px;
+  margin:20px auto;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
   text-align:center;
 }
-nav a{
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:bold;
-}
-nav a:hover{ text-decoration:underline; }
+h2{color:#6f4e37;}
 
-.section{
-  padding:30px 15px;
+.menu-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
+.menu-item{
+  background:#f3e5d0;
+  padding:15px;
+  border-radius:12px;
+  font-size:17px;
+}
+
+footer{
+  background:#6f4e37;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:40px;
+}
+
+/* WhatsApp */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Admin */
+#adminPanel{display:none;}
+input,button{
+  padding:10px;
+  margin:6px;
+  border-radius:8px;
+  border:1px solid #aaa;
+}
+.admin-btn{
+  background:#6f4e37;
+  color:white;
+  border:none;
+}
+</style>
+</head>
+<body>
+
+<header>અલખનો ઑટલો ☕</header>
+
+<nav>
+<button onclick="go('home')">Home</button>
+<button onclick="go('menu')">Menu</button>
+<button onclick="go('contact')">Contact</button>
+<button onclick="go('admin')">Admin</button>
+</nav>
+
+<!-- Home -->
+<div class="section" id="home">
+  <div class="card">
+    <h2>સ્વાગત છે</h2>
+    <p>અલખનો ઑટલો – તમારો પોતાનો Cafe</p>
+    <p>ચા, કોફી અને નાસ્તા માટે શ્રેષ્ઠ જગ્યા.</p>
+    <p><b>Owner:</b> Suresh Bhai</p>
+  </div>
+</div>
+
+<!-- Menu -->
+<div class="section" id="menu">
+  <div class="card">
+    <h2>અમારું Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">☕ ચા - ₹10</div>
+      <div class="menu-item">🥤 કોફી - ₹15</div>
+      <div class="menu-item">🥪 નાસ્તો - ₹20</div>
+      <div class="menu-item">🍪 બિસ્કીટ - ₹5</div>
+    </div>
+    <p>હંમેશા તાજું અને સ્વાદિષ્ટ.</p>
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="section" id="contact">
+  <div class="card">
+    <h2>સંપર્ક કરો</h2>
+    <p><b>Owner:</b> Suresh Bhai</p>
+    <p><b>Contact:</b> 9662787286</p>
+  </div>
+</div>
+
+<!-- Admin -->
+<div class="section" id="admin">
+  <div class="card">
+    <h2>Admin Login</h2>
+    <input type="password" id="pass" placeholder="Password">
+    <button class="admin-btn" onclick="login()">Login</button>
+
+    <div id="adminPanel">
+      <h3>Admin Panel</h3>
+      <p>આ demo admin panel છે.</p>
+      <button class="admin-btn" onclick="alert('Saved (Demo)')">Save</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+© 2026 અલખનો ઑટલો | Owner: Suresh Bhai
+</footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/919662787286" target="_blank">💬</a>
+
+<script>
+function go(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+function login(){
+  let p=document.getElementById("pass").value;
+  if(p==="1234"){
+    document.getElementById("adminPanel").style.display="block";
+    alert("Login Successful");
+  }else{
+    alert("Wrong Password");
+  }
+}
+</script>
+
+</body>
+</html>}
 .card{
   background:white;
   max-width:600px;
