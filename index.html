@@ -1,68 +1,116 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-  <meta charset="UTF-8">
-  <title>અલપનો ઑટલો</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>અલખનો ઑટલો</title>
+<style>
+body{margin:0;font-family:Arial;background:#f5f5f5;text-align:center}
+header{background:#2e7d32;color:#fff;padding:20px;font-size:28px;font-weight:bold}
+nav{background:#1b5e20;padding:10px}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:bold}
+.container{padding:25px}
+.box{background:#fff;max-width:500px;margin:auto;padding:20px;border-radius:10px;box-shadow:0 0 10px #ccc}
+h2{color:#2e7d32}
+footer{background:#2e7d32;color:#fff;padding:15px;margin-top:40px}
 
-    header {
-      background: #2e7d32;
-      color: white;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-    }
+/* WhatsApp Button */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 10px #555;
+}
 
-    nav {
-      background: #1b5e20;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      padding: 30px;
-    }
-
-    .box {
-      background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2e7d32;
-    }
-
-    footer {
-      background: #2e7d32;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-  </style>
+/* Admin Panel */
+#adminPanel{display:none}
+input,button{padding:8px;margin:5px;border-radius:5px;border:1px solid #999}
+button{background:#2e7d32;color:white;border:none}
+</style>
 </head>
 <body>
+
+<header>અલખનો ઑટલો</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+<a href="#admin">Admin</a>
+</nav>
+
+<div class="container" id="home">
+<div class="box">
+<h2>સ્વાગત છે</h2>
+<p>અહીં તમને ચા, કોફી અને સ્વાદિષ્ટ નાસ્તો મળશે.</p>
+<p>Owner: <b>Suresh Bhai</b></p>
+</div>
+</div>
+
+<div class="container" id="menu">
+<div class="box">
+<h2>આજે શું મળશે?</h2>
+<ul style="list-style:none;padding:0;font-size:18px">
+<li>☕ ચા - ₹10</li>
+<li>🥤 કોફી - ₹15</li>
+<li>🥪 નાસ્તો - ₹20</li>
+<li>🍪 બિસ્કીટ - ₹5</li>
+</ul>
+<p>ચા, કોફી, નાસ્તો જેવી વસ્તુઓ હંમેશા ઉપલબ્ધ રહેશે.</p>
+</div>
+</div>
+
+<div class="container" id="contact">
+<div class="box">
+<h2>સંપર્ક કરો</h2>
+<p><b>Owner:</b> Suresh Bhai</p>
+<p><b>Contact:</b> 9662787286</p>
+</div>
+</div>
+
+<div class="container" id="admin">
+<div class="box">
+<h2>Admin Login</h2>
+<input type="password" id="pass" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+
+<div id="adminPanel">
+<h3>Admin Panel</h3>
+<p>આ demo admin panel છે.</p>
+<p>આગળ જઈને અહીંથી menu બદલાઈ શકશે.</p>
+<button onclick="alert('Data Saved (Demo)')">Save</button>
+</div>
+</div>
+</div>
+
+<footer>
+© 2026 અલખનો ઑટલો | Owner: Suresh Bhai
+</footer>
+
+<!-- WhatsApp Button -->
+<a class="whatsapp" 
+href="https://wa.me/919662787286" 
+target="_blank">💬</a>
+
+<script>
+function login(){
+let p=document.getElementById("pass").value;
+if(p==="1234"){
+document.getElementById("adminPanel").style.display="block";
+alert("Login Successful");
+}else{
+alert("Wrong Password");
+}
+}
+</script>
+
+</body>
+</html><body>
 
   <header>અલપનો ઑટલો</header>
 
