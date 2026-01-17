@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>અલખનો ઓટલો - કેર ફાર્મસી</title>
+    <title>ચામુંડા ચા નાસ્તા અને પાન પાર્લર</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f8f9fa;
+            font-family: 'Noto Sans Gujarati', 'Poppins', sans-serif;
+            background-color: #fefefe;
             color: #333;
             line-height: 1.6;
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -27,9 +31,12 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #2c5c3e 0%, #3a7d5c 100%);
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
             color: white;
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
@@ -47,8 +54,8 @@
         }
         
         .logo-circle {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background-color: white;
             border-radius: 50%;
             display: flex;
@@ -57,18 +64,19 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
-        .logo-circle img {
-            max-width: 50px;
-            max-height: 50px;
+        .logo-circle i {
+            font-size: 2.2rem;
+            color: #d32f2f;
         }
         
         .shop-name h1 {
             font-size: 1.8rem;
             margin-bottom: 5px;
+            font-weight: 700;
         }
         
         .shop-name p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             opacity: 0.9;
         }
         
@@ -78,13 +86,17 @@
         
         .contact-info p {
             margin-bottom: 5px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
         }
         
         /* Navigation */
         nav {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eee;
         }
         
         .nav-container {
@@ -103,19 +115,34 @@
         
         nav a {
             text-decoration: none;
-            color: #2c5c3e;
+            color: #d32f2f;
             font-weight: 600;
             font-size: 1.1rem;
             transition: color 0.3s;
+            position: relative;
         }
         
         nav a:hover {
-            color: #3a7d5c;
+            color: #b71c1c;
+        }
+        
+        nav a.active {
+            color: #b71c1c;
+        }
+        
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #b71c1c;
+            bottom: -5px;
+            left: 0;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 92, 62, 0.8), rgba(44, 92, 62, 0.9)), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -124,27 +151,42 @@
         }
         
         .hero h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
             font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .veg-badge {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 1.1rem;
         }
         
         /* Products Section */
         .products {
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background-color: #f9f9f9;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #2c5c3e;
-            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
+            color: #d32f2f;
+            font-size: 2.5rem;
             position: relative;
+            font-weight: 700;
         }
         
         .section-title:after {
@@ -152,24 +194,36 @@
             position: absolute;
             width: 100px;
             height: 4px;
-            background-color: #3a7d5c;
-            bottom: -10px;
+            background-color: #d32f2f;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
         
         .product-card:hover {
@@ -177,48 +231,62 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
         .product-img {
             height: 200px;
             width: 100%;
-            background-color: #f1f1f1;
+            background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            color: #3a7d5c;
+            color: #d32f2f;
         }
         
         .product-content {
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
         
         .product-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c5c3e;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: #333;
         }
         
         .product-content p {
             color: #666;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
         }
         
         .price {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #3a7d5c;
+            color: #d32f2f;
         }
         
         /* About Section */
         .about {
-            background-color: #f0f7f3;
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background-color: white;
         }
         
         .about-content {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 4rem;
             flex-wrap: wrap;
         }
         
@@ -228,44 +296,72 @@
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #2c5c3e;
+            font-size: 2rem;
+            margin-bottom: 1.8rem;
+            color: #d32f2f;
         }
         
         .about-text p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            color: #555;
         }
         
-        .owner-info {
+        .owners-info {
             flex: 1;
             min-width: 300px;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background-color: #f9f9f9;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .owner-info h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c5c3e;
+        .owners-info h4 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #d32f2f;
             text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
         }
         
         .owner-detail {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
         }
         
-        .owner-detail i {
+        .owner-detail:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .owner-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #d32f2f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            color: #3a7d5c;
-            width: 40px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .owner-text h5 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .owner-text p {
+            color: #666;
+            font-size: 1rem;
         }
         
         /* WhatsApp Button */
@@ -275,14 +371,14 @@
             right: 30px;
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            font-size: 2.2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
             z-index: 1000;
             transition: all 0.3s;
             text-decoration: none;
@@ -291,32 +387,29 @@
         .whatsapp-button:hover {
             background-color: #128C7E;
             transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
         }
         
         /* Footer */
         footer {
-            background-color: #2c5c3e;
+            background-color: #222;
             color: white;
-            padding: 3rem 0 1.5rem;
+            padding: 4rem 0 2rem;
         }
         
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
         .footer-section h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.8rem;
+            color: #fff;
             position: relative;
+            padding-bottom: 10px;
         }
         
         .footer-section h4:after {
@@ -324,41 +417,80 @@
             position: absolute;
             width: 50px;
             height: 3px;
-            background-color: #3a7d5c;
-            bottom: -8px;
+            background-color: #d32f2f;
+            bottom: 0;
             left: 0;
         }
         
         .footer-section p, .footer-section a {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             display: block;
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 1rem;
         }
         
         .footer-section a:hover {
-            color: white;
+            color: #d32f2f;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: #d32f2f;
+            transform: translateY(-5px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
         }
         
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 1rem;
+                gap: 1.2rem;
             }
             
             .contact-info {
                 text-align: center;
+                width: 100%;
+            }
+            
+            .contact-info p {
+                justify-content: center;
             }
             
             .hero h2 {
@@ -377,12 +509,52 @@
             nav li {
                 padding: 0.8rem 1rem;
             }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
 <body>
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/9662787286?text=હેલો%20સુરેશભાઈ,%20મને%20તમારી%20દુકાન%20વિશે%20વધુ%20માહિતી%20જોઈતી%20હતી" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me/9662787286?text=હેલો%20ચામુંડા%20ચા%20નાસ્તા%20અને%20પાન%20પાર્લર,%20મને%20તમારી%20દુકાન%20વિશે%20વધુ%20માહિતી%20જોઈતી%20હતી" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -391,17 +563,16 @@
         <div class="container header-content">
             <div class="logo-section">
                 <div class="logo-circle">
-                    <!-- You can replace this with your actual logo -->
-                    <i class="fas fa-store" style="font-size: 2.5rem; color: #2c5c3e;"></i>
+                    <i class="fas fa-utensils"></i>
                 </div>
                 <div class="shop-name">
-                    <h1>અલખનો ઓટલો</h1>
-                    <p>કેર ફાર્મસી સાથે</p>
+                    <h1>ચામુંડા ચા નાસ્તા અને પાન પાર્લર</h1>
+                    <p>ફક્ત શુદ્ધ શાકાહારી - સ્વાદ અને તાજગીની ગેરંટી</p>
                 </div>
             </div>
             <div class="contact-info">
-                <p><i class="fas fa-phone-alt"></i> ફોન: 9662787286</p>
-                <p><i class="fas fa-clock"></i> સમય: સવાર 8:00 - રાત 10:00</p>
+                <p><i class="fas fa-phone-alt"></i> ફોન: 9662787286 | 8769592822</p>
+                <p><i class="fas fa-clock"></i> સમય: સવાર 7:00 - રાત 11:00</p>
             </div>
         </div>
     </header>
@@ -410,7 +581,7 @@
     <nav>
         <div class="container nav-container">
             <ul>
-                <li><a href="#home">હોમ</a></li>
+                <li><a href="#home" class="active">હોમ</a></li>
                 <li><a href="#products">ઉત્પાદનો</a></li>
                 <li><a href="#about">અમારા વિશે</a></li>
                 <li><a href="#contact">સંપર્ક કરો</a></li>
@@ -421,9 +592,11 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>સ્વાદિષ્ટ ચા, કોફી અને નાસ્તો</h2>
-            <p>અમારી દુકાન પર તાજા અને સ્વાદિષ્ટ ચા, કોફી અને વિવિધ પ્રકારના નાસ્તા મળે છે. સુરેશભાઈની મદદથી દરેક વસ્તુ બનાવવામાં આવે છે.</p>
-            <a href="#products" style="display: inline-block; background-color: white; color: #2c5c3e; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">ઉત્પાદનો જુઓ</a>
+            <h2>શુદ્ધ શાકાહારી ચા, નાસ્તા અને પાન</h2>
+            <p>વર્ષોથી સેવા આપી રહ્યા છીએ સ્વાદિષ્ટ અને તાજા શાકાહારી ખોરાક સાથે. અમારી દરેક વસ્તુ પરંપરાગત રીતે અને તાજા ઘટકો સાથે બનાવવામાં આવે છે.</p>
+            <div class="veg-badge">
+                <i class="fas fa-leaf"></i> 100% શુદ્ધ શાકાહારી
+            </div>
         </div>
     </section>
 
@@ -431,194 +604,83 @@
     <section class="products" id="products">
         <div class="container">
             <h2 class="section-title">અમારા ઉત્પાદનો</h2>
+            <p class="section-subtitle">અમે ફક્ત શાકાહારી ચા, કોફી, નાસ્તા અને પાનની વિવિધ વાનગીઓ ઓફર કરીએ છીએ. તમામ વસ્તુઓ તાજા અને ગુણવત્તાપૂર્ણ ઘટકો સાથે બનાવવામાં આવે છે.</p>
+            
             <div class="product-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
                     <div class="product-img">
-                        <i class="fas fa-coffee"></i>
+                        <i class="fas fa-mug-hot"></i>
                     </div>
                     <div class="product-content">
-                        <h3>ખાસ ચા</h3>
-                        <p>તાજા દૂધ અને મસાલાથી બનાવેલી સ્વાદિષ્ટ ચા</p>
+                        <h3>મસાલા ચા</h3>
+                        <p>તાજા મસાલા અને દૂધથી બનાવેલી સ્વાદિષ્ટ ચા</p>
                         <div class="price">₹20</div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
-                <div class="product-card">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
                     <div class="product-img">
-                        <i class="fas fa-mug-hot"></i>
+                        <i class="fas fa-coffee"></i>
                     </div>
                     <div class="product-content">
-                        <h3>કોફી</h3>
-                        <p>ઉત્તમ ક્વોલિટીની કોફી બીન્સથી બનાવેલી કોફી</p>
+                        <h3>ફિલ્ટર કોફી</h3>
+                        <p>ઉત્તમ ક્વોલિટીની કોફી બીન્સથી બનાવેલી તાજી કોફી</p>
                         <div class="price">₹30</div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
-                <div class="product-card">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
                     <div class="product-img">
-                        <i class="fas fa-bread-slice"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <div class="product-content">
-                        <h3>સેન્ડવિચ</h3>
-                        <p>તાજી બ્રેડ અને વિવિધ ભરણવાળા સેન્ડવિચ</p>
-                        <div class="price">₹40 - ₹60</div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-cookie-bite"></i>
-                    </div>
-                    <div class="product-content">
-                        <h3>નાસ્તો</h3>
-                        <p>પોહા, ખામણ, ઢોકલા, ભાખરીઓ અને વધુ</p>
+                        <h3>વિશેષ પાન</h3>
+                        <p>મસાલા, સુપારી અને વિવિધ ઘટકો સાથે તાજું પાન</p>
                         <div class="price">₹25 - ₹50</div>
                     </div>
                 </div>
                 
-                <!-- Product 5 -->
-                <div class="product-card">
+                <!-- Product 4 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
                     <div class="product-img">
-                        <i class="fas fa-egg"></i>
+                        <i class="fas fa-bread-slice"></i>
                     </div>
                     <div class="product-content">
-                        <h3>અંડા નાસ્તો</h3>
-                        <p>બોઇલ અંડા, ઓમલેટ અને અંડા ભુરજી</p>
-                        <div class="price">₹30 - ₹50</div>
+                        <h3>વેજ સેન્ડવિચ</h3>
+                        <p>તાજી શાકભાજી અને ચટણી સાથે સ્વાદિષ્ટ સેન્ડવિચ</p>
+                        <div class="price">₹40 - ₹70</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
+                    <div class="product-img">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>પરંપરાગત નાસ્તો</h3>
+                        <p>પોહા, ઢોકલા, ખામણ, ભેલ અને અન્ય ગુજરાતી નાસ્તા</p>
+                        <div class="price">₹30 - ₹60</div>
                     </div>
                 </div>
                 
                 <!-- Product 6 -->
-                <div class="product-card">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-badge">શાકાહારી</div>
                     <div class="product-img">
-                        <i class="fas fa-ice-cream"></i>
+                        <i class="fas fa-glass-whiskey"></i>
                     </div>
                     <div class="product-content">
                         <h3>ઠંડું પીણું</h3>
-                        <p>લસ્સી, મિલ્કશેક, ફ્રૂટ જ્યુસ અને કોલ્ડ ડ્રિંક્સ</p>
-                        <div class="price">₹30 - ₹60</div>
+                        <p>લસ્સી, ફ્રૂટ જ્યુસ, મિલ્કશેક અને શાકાહારી કોક્ટેલ</p>
+                        <div class="price">₹40 - ₹80</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">અમારા વિશે</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>અલખનો ઓટલો - તમારું પસંદગીનું સ્થળ</h3>
-                    <p>અમારી દુકાન વર્ષોથી સ્થાનિક લોકોને શ્રેષ્ઠ ગુણવત્તાની ચા, કોફી અને નાસ્તો પૂરા પાડી રહી છે. અમે તાજા ઘટકો અને પરંપરાગત રીતે દરેક વસ્તુ બનાવીએ છીએ.</p>
-                    <p>અમારો ધ્યેય ગ્રાહકોને સ્વાદિષ્ટ અને તાજા ખોરાક પૂરા પાડવાનો છે જેથી તેઓ હંમેશા સંતુષ્ટ રહે.</p>
-                    <p>અમે મસાલંદી અને અન્ય વિશેષતાઓ પણ ઓફર કરીએ છીએ જે અમારી દુકાનને અન્યથી અલગ બનાવે છે.</p>
-                </div>
-                <div class="owner-info">
-                    <h4>માલિકની માહિતી</h4>
-                    <div class="owner-detail">
-                        <i class="fas fa-user"></i>
-                        <div>
-                            <strong>નામ:</strong> સુરેશભાઈ
-                        </div>
-                    </div>
-                    <div class="owner-detail">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <strong>ફોન નંબર:</strong> 9662787286
-                        </div>
-                    </div>
-                    <div class="owner-detail">
-                        <i class="fas fa-store"></i>
-                        <div>
-                            <strong>દુકાનનું નામ:</strong> અલખનો ઓટલો (કેર ફાર્મસી સાથે)
-                        </div>
-                    </div>
-                    <div class="owner-detail">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strongકામકાજના સમય:</strong> સવાર 8:00 - રાત 10:00 (રોજ)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>અલખનો ઓટલો</h4>
-                    <p>અમે શ્રેષ્ઠ ગુણવત્તાની ચા, કોફી અને નાસ્તો પૂરો પાડીએ છીએ. વર્ષોથી સેવા આપી રહ્યા છીએ.</p>
-                    <p>તમારી પસંદગી અને વિશ્વાસ માટે આભાર.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>સંપર્ક કરો</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> કેર ફાર્મસી સાથે, મસાલંદી</p>
-                    <p><i class="fas fa-phone-alt"></i> ફોન: 9662787286</p>
-                    <p><i class="fas fa-clock"></i> સમય: સવાર 8:00 - રાત 10:00</p>
-                </div>
-                <div class="footer-section">
-                    <h4>ઝડપી લિંક્સ</h4>
-                    <a href="#home">હોમ</a>
-                    <a href="#products">ઉત્પાદનો</a>
-                    <a href="#about">અમારા વિશે</a>
-                    <a href="https://wa.me/9662787286" target="_blank">WhatsApp પર સંપર્ક કરો</a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 અલખનો ઓટલો. બધા હક્ક સુરક્ષિત.</p>
-                <p>આ વેબસાઈટ GitHub પર હોસ્ટ કરવામાં આવી છે.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Add animation to product cards when they come into view
-        const observerOptions = {
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe product cards
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s, transform 0.5s';
-            observer.observe(card);
-        });
-    </script>
-</body>
-  </html>
+               
